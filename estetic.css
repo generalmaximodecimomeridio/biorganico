@@ -77,7 +77,6 @@ header .logo a:hover .logo-texto { transform: scale(1.05); }
 .hamburger-btn { font-size: 1.8rem; cursor: pointer; padding: 5px; transition: transform 0.2s; user-select: none; }
 .hamburger-btn:hover { transform: scale(1.1); }
 
-/* Por defecto, los enlaces móviles están ocultos en pantallas de PC */
 .mobile-only-links { display: none; }
 
 /* --- MENÚ LATERAL --- */
@@ -117,8 +116,6 @@ header .logo a:hover .logo-texto { transform: scale(1.05); }
     transition: background 0.2s;
 }
 .sidebar-menu ul li a:hover { background-color: #2e7d32; }
-
-/* Botón especial para el login en el menú lateral */
 .sidebar-login-btn { border: 1px solid rgba(255, 255, 255, 0.3); background-color: rgba(255,255,255,0.05); }
 
 .sidebar-footer { margin-top: auto; padding-top: 30px; text-align: center; }
@@ -156,7 +153,6 @@ main { flex: 1; padding: 40px 5%; }
     margin-bottom: 20px;
 }
 
-/* Grilla fluida auto-ajustable */
 .destacados-container {
     display: flex;
     flex-wrap: wrap; 
@@ -175,7 +171,6 @@ main { flex: 1; padding: 40px 5%; }
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Contenedor estricto de imágenes */
 .img-destacado-icono {
     flex: 0 0 75px;
     height: 75px;
@@ -199,26 +194,23 @@ main { flex: 1; padding: 40px 5%; }
 .destacado-precio { font-weight: bold; font-size: 0.95rem; }
 .destacado-precio span { color: #d32f2f; font-size: 1.1rem; }
 
-/* --- BOTONES DE ACCIÓN (VER MÁS Y COMPRAR) --- */
+/* --- BOTONES DE ACCIÓN --- */
+/* --- BOTONES DE ACCIÓN (ACTUALIZADOS) --- */
 .ver-mas-container { 
     display: flex;
     justify-content: flex-end; 
-    gap: 12px; 
-    margin-top: 20px; 
+    margin-top: 25px; 
 }
 
-.btn-ver-mas, .btn-comprar {
+.btn-ver-mas {
     display: inline-block;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 20px;
+    padding: 10px 24px;
     border-radius: 20px;
     font-size: 0.9rem;
     transition: all 0.3s ease;
     text-align: center;
-}
-
-.btn-ver-mas {
     background-color: rgba(255, 255, 255, 0.15);
     color: #a5d6a7;
     border: 1px solid rgba(165, 214, 167, 0.4);
@@ -230,16 +222,109 @@ main { flex: 1; padding: 40px 5%; }
     transform: translateY(-2px);
 }
 
-.btn-comprar {
+/* Nuevo botón de compra exclusivo para las tarjetas */
+.btn-comprar-card {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    transition: all 0.2s ease;
+    text-align: center;
     background-color: #ffb74d; 
     color: #122614; 
     border: 1px solid #ffb74d;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.btn-comprar:hover {
+.btn-comprar-card:hover {
     background-color: #ffa726;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(255, 183, 77, 0.4);
+    transform: scale(1.03);
+}
+
+/* --- STOCK Y DESCUENTOS ESTILOS REFINADOS --- */
+.destacado-stock {
+    font-size: 0.8rem;
+    color: #2e7d32;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.tarjeta-oferta {
+    position: relative;
+    border: 2px solid #ffb74d;
+    box-shadow: 0 4px 12px rgba(255, 183, 77, 0.2);
+}
+
+.badge-descuento {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: #d32f2f;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.precio-antiguo {
+    color: #888888 !important;
+    font-size: 0.85rem !important;
+    text-decoration: line-through;
+    margin-right: 8px;
+    font-weight: normal;
+}
+
+.precio-nuevo {
+    color: #d32f2f;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+/* --- STOCK Y DESCUENTOS ESTILOS REFINADOS --- */
+.destacado-stock {
+    font-size: 0.8rem;
+    color: #2e7d32;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.tarjeta-oferta {
+    position: relative;
+    border: 2px solid #ffb74d;
+    box-shadow: 0 4px 12px rgba(255, 183, 77, 0.2);
+}
+
+.badge-descuento {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: #d32f2f;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.precio-antiguo {
+    color: #888888 !important;
+    font-size: 0.85rem !important;
+    text-decoration: line-through;
+    margin-right: 8px;
+    font-weight: normal;
+}
+
+.precio-nuevo {
+    color: #d32f2f;
+    font-size: 1.15rem;
+    font-weight: bold;
 }
 
 /* --- FOOTER --- */
@@ -257,25 +342,18 @@ footer {
 .footer-box p, .nosotros-footer-text { font-size: 0.9rem; color: #e8f5e9; line-height: 1.5; }
 .footer-bottom { text-align: center; padding: 15px; font-size: 0.85rem; background-color: #123e14; }
 
-/* --- RESPONSIVIDAD SÓLIDA (Ajustes Automáticos) --- */
+/* --- RESPONSIVIDAD SÓLIDA --- */
 @media (max-width: 768px) {
-    /* Oculta los enlaces de la cabecera en PC */
     .desktop-only { display: none; }
-    
-    /* Muestra los enlaces dentro del menú desplegable */
     .mobile-only-links { display: block; }
 
-    /* Ajuste de cabecera flexible en vertical */
     header { 
         flex-wrap: wrap; 
         padding: 12px 4%;
     }
-    
-    /* El logo y el botón de hamburguesa se quedan arriba alineados */
     header .logo { order: 1; }
     .header-right-controls { order: 2; }
     
-    /* La barra de búsqueda baja al centro automáticamente y ocupa todo el ancho */
     .search-container { 
         order: 3; 
         width: 100%; 
@@ -285,16 +363,6 @@ footer {
     }
 
     .destacados-container, .footer-content { flex-direction: column; gap: 20px; }
-    
-    /* La tarjeta mantiene la foto a la izquierda de forma limpia */
-    .destacado-card { 
-        flex-direction: row; 
-        text-align: left; 
-    }
-    
-    /* Centra los botones de Ver más y Comprar en móviles */
-    .ver-mas-container {
-        justify-content: center;
-        width: 100%;
-    }
+    .destacado-card { flex-direction: row; text-align: left; }
+    .ver-mas-container { justify-content: center; width: 100%; }
 }

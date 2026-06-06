@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- MENÚ LATERAL DESPLEGABLE -->
     <input type="checkbox" id="menu-toggle" class="menu-checkbox">
     <div class="sidebar-menu">
         <label for="menu-toggle" class="close-btn">✕</label>
@@ -34,6 +35,7 @@
         </div>
     </div>
 
+    <!-- ENCABEZADO -->
     <header>
         <div class="logo">
             <a href="index.html">
@@ -54,24 +56,33 @@
         </div>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
         <section class="hero">
             <h2>Bienvenidos a Biorganico</h2>
             <p>Tu espacio de cultivo urbano, herramientas de jardinería y fertilización 100% ecológica.</p>
         </section>
 
+        <!-- ================= SECCIÓN 1: HERRAMIENTAS ================= -->
         <section class="destacados-section">
             <h3 class="seccion-titulo">🛠️ Herramientas Profesionales</h3>
             <div class="destacados-container">
                 
-                <div class="destacado-card">
+                <!-- Producto con Descuento Destacado -->
+                <div class="destacado-card tarjeta-oferta">
+                    <span class="badge-descuento">-31% DTO.</span>
                     <div class="img-destacado-icono">
                         <img src="imagenes/pala acero inocidable.png" alt="Pala de Acero" class="prod-img">
                     </div>
                     <div class="destacado-info">
                         <h4>Pala Premium de Acero Inoxidable</h4>
                         <p class="destacado-desc">Herramienta de alta calidad con mango ergonómico de madera tratada, ideal para suelos duros y trasplantes exigentes.</p>
-                        <p class="destacado-precio">Oferta: <span>$12.990</span></p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>5 unids.</b></p>
+                        <p class="destacado-precio">
+                            <span class="precio-antiguo">$18.990</span> 
+                            <span class="precio-nuevo">Ahora: $12.990</span>
+                        </p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
@@ -82,7 +93,9 @@
                     <div class="destacado-info">
                         <h4>Tijera de Podar Profesional</h4>
                         <p class="destacado-desc">Hojas de acero al carbono con bloqueo de seguridad. Cortes limpios que cuidan la salud de tus plantas ornamentales.</p>
-                        <p class="destacado-precio">Oferta: <span>$8.500</span></p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>14 unids.</b></p>
+                        <p class="destacado-precio">Precio: <span>$8.500</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
@@ -93,17 +106,19 @@
                     <div class="destacado-info">
                         <h4>Rastrillo de Mano Ergonómico</h4>
                         <p class="destacado-desc">Diseñado con 5 garras de acero reforzado para airear, limpiar y remover la tierra en maceteros o huertos pequeños de forma eficiente.</p>
-                        <p class="destacado-precio">Oferta: <span>$5.490</span></p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>8 unids.</b></p>
+                        <p class="destacado-precio">Precio: <span>$5.490</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
             </div>
             <div class="ver-mas-container">
-                <a href="galeria.html?cat=herramientas" class="btn-ver-mas">Ver más +</a>
-                <a href="#comprar" class="btn-comprar">Comprar 🛒</a>
+                <a href="galeria.html?cat=herramientas" class="btn-ver-mas">Ver más+</a>
             </div>
         </section>
 
+        <!-- ================= SECCIÓN 2: ABONOS Y FERTILIZANTES ================= -->
         <section class="destacados-section">
             <h3 class="seccion-titulo">🧪 Modelos de Abono Sustentable</h3>
             <div class="destacados-container">
@@ -115,7 +130,9 @@
                     <div class="destacado-info">
                         <h4>Humus de Lombriz Premium</h4>
                         <p class="destacado-desc">Abono orgánico puro extraído por lixiviación natural. Aporta microorganismos benéficos y acelera radicalmente el crecimiento.</p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>19 unids.</b></p>
                         <p class="destacado-precio">Precio: <span>$4.500</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
@@ -126,7 +143,9 @@
                     <div class="destacado-info">
                         <h4>Compost Orgánico Madurado</h4>
                         <p class="destacado-desc">Mezcla premium rica en nitrógeno y materia vegetal descompuesta. Mejora la retención de humedad y la estructura del suelo.</p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>11 unids.</b></p>
                         <p class="destacado-precio">Precio: <span>$3.990</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
@@ -137,17 +156,19 @@
                     <div class="destacado-info">
                         <h4>Abono de Guano de Ave Marino</h4>
                         <p class="destacado-desc">Potente fertilizante natural alto en fósforo. Especialmente recomendado para potenciar fases de floración y frutos grandes.</p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>3 unids.</b></p>
                         <p class="destacado-precio">Precio: <span>$6.200</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
             </div>
             <div class="ver-mas-container">
-                <a href="galeria.html?cat=fertilizacion" class="btn-ver-mas">Ver más +</a>
-                <a href="#comprar" class="btn-comprar">Comprar 🛒</a>
+                <a href="galeria.html?cat=fertilizacion" class="btn-ver-mas">Ver más+</a>
             </div>
         </section>
 
+        <!-- ================= SECCIÓN 3: VARIEDAD DE PLANTAS ================= -->
         <section class="destacados-section">
             <h3 class="seccion-titulo">🌿 Tipos de Plantas y Cultivos</h3>
             
@@ -159,7 +180,9 @@
                     <div class="destacado-info">
                         <h4>Planta de Menta Arvenis</h4>
                         <p class="destacado-desc">Planta aromática perenne de rápido crecimiento. Ideal para huertos caseros, infusiones y control biológico de insectos.</p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>17 unids.</b></p>
                         <p class="destacado-precio">Precio: <span>$2.500</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
@@ -170,7 +193,9 @@
                     <div class="destacado-info">
                         <h4>Romero Rastrero Macollo</h4>
                         <p class="destacado-desc">Arbusto rústico ultra resistente que requiere muy poco riego. Excelente condimento culinario y ambientador natural.</p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>9 unids.</b></p>
                         <p class="destacado-precio">Precio: <span>$3.200</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
@@ -181,7 +206,9 @@
                     <div class="destacado-info">
                         <h4>Plantón de Tomate Cherry</h4>
                         <p class="destacado-desc">Variedad productiva perfecta para balconies. Produce frutos dulces en racimo durante toda la temporada estival.</p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>12 unids.</b></p>
                         <p class="destacado-precio">Precio: <span>$1.800</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
@@ -194,7 +221,9 @@
                     <div class="destacado-info">
                         <h4>Planta de Ají Cacho de Cabra</h4>
                         <p class="destacado-desc">Variedad endémica chilena de picor intenso. Planta compacta y muy decorativa que requiere exposición directa al sol.</p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>4 unids.</b></p>
                         <p class="destacado-precio">Precio: <span>$2.200</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
 
@@ -205,18 +234,20 @@
                     <div class="destacado-info">
                         <h4>Almácigo de Lechuga Costina</h4>
                         <p class="destacado-desc">Brotes listos para trasplantar. Crecimiento rápido en suelos húmedos, ideal para iniciar en la agricultura urbana.</p>
+                        <p class="destacado-stock">🟢 Disponibles: <b>15 unids.</b></p>
                         <p class="destacado-precio">Precio: <span>$1.200</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
 
             <div class="ver-mas-container">
-                <a href="galeria.html?cat=plantas" class="btn-ver-mas">Ver más +</a>
-                <a href="#comprar" class="btn-comprar">Comprar 🛒</a>
+                <a href="galeria.html?cat=plantas" class="btn-ver-mas">Ver más+</a>
             </div>
         </section>
     </main>
 
+    <!-- PIE DE PÁGINA -->
     <footer id="contacto">
         <div class="footer-content">
             <div class="footer-box">
