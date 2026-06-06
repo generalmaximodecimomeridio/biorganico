@@ -366,3 +366,131 @@ footer {
     .destacado-card { flex-direction: row; text-align: left; }
     .ver-mas-container { justify-content: center; width: 100%; }
 }
+/*-----------------login------------------*/
+/* --- NUEVOS ESTILOS EXCLUSIVOS: LOGIN.HTML --- */
+
+/* Contenedor principal centrado flexible */
+.login-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 5%;
+    min-height: calc(100vh - 180px); /* Ajusta dinámicamente según header/footer */
+}
+
+/* Tarjeta contenedora con efecto Glassmorphism */
+.login-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo sólido claro para contrastar inputs oscuros */
+    color: #333333;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    color: #1b5e20;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Formulario e Inputs */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Efecto focus iluminado al seleccionar un input */
+.form-input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+/* Opciones extras (Recordarme y Olvidé contraseña) */
+.form-actions-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #555;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Botón de envío */
+.btn-submit-login {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(46, 125, 50, 0.2);
+    margin-top: 10px;
+}
+
+.btn-submit-login:hover {
+    background-color: #1b5e20;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(46, 125, 50, 0.3);
+}
+
+/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 25px 20px;
+    }
+}
