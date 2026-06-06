@@ -8,22 +8,50 @@
 </head>
 <body>
 
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    <div class="sidebar-menu">
+        <label for="menu-toggle" class="close-btn">✕</label>
+        
+        <div class="mobile-only-links">
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="galeria.html">🌐 Ver Todo</a></li>
+                <li><a href="login.html" class="sidebar-login-btn">🔑 Iniciar Sesión</a></li>
+            </ul>
+        </div>
+
+        <h3>Categorías</h3>
+        <ul>
+            <li><a href="galeria.html?cat=plantas">🌿 Plantas</a></li>
+            <li><a href="galeria.html?cat=agricultura">🚜 Agricultura</a></li>
+            <li><a href="galeria.html?cat=herramientas">🛠️ Herramientas</a></li>
+            <li><a href="galeria.html?cat=fertilizacion">🧪 Fertilización</a></li>
+            <li><a href="galeria.html?cat=fumigacion">💨 Fumigación</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="#contacto" class="btn-ayuda" onclick="document.getElementById('menu-toggle').checked = false;">¿Necesitas ayuda?</a>
+        </div>
+    </div>
+
     <header>
         <div class="logo">
-            <h1>Biorganico</h1>
+            <a href="index.html">
+                <strong class="logo-texto">Biorganico</strong>
+            </a>
         </div>
 
         <div class="search-container">
             <form onsubmit="return false;">
-                <input type="text" placeholder="¿Que estamos buscando?" class="search-input">
+                <input type="text" placeholder="Buscar en el sitio..." class="search-input">
             </form>
         </div>
 
-        <nav>
-            <a href="index.html" class="active">Inicio</a>
-            <a href="galeria.html">Tienda/Galería</a>
-            <a href="login.html">Iniciar Sesión</a>
-        </nav>
+        <div class="header-right-controls">
+            <a href="galeria.html" class="nav-top-link desktop-only">🌐 Ver Todo</a>
+            <a href="login.html" class="nav-top-link login-top-btn desktop-only">🔑 Iniciar Sesión</a>
+            <label for="menu-toggle" class="hamburger-btn">☰</label>
+        </div>
     </header>
 
     <main>
@@ -32,24 +60,178 @@
             <p>Tu espacio de cultivo urbano, herramientas de jardinería y fertilización 100% ecológica.</p>
         </section>
 
-        <section class="categorias-home">
-            <div class="categoria-card">
-                <h3>Plantas de Decoración</h3>
-                <p>Variedad de interior y exterior para darle vida a tu hogar.</p>
+        <section class="destacados-section">
+            <h3 class="seccion-titulo">🛠️ Herramientas Profesionales</h3>
+            <div class="destacados-container">
+                
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/pala acero inocidable.png" alt="Pala de Acero" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Pala Premium de Acero Inoxidable</h4>
+                        <p class="destacado-desc">Herramienta de alta calidad con mango ergonómico de madera tratada, ideal para suelos duros y trasplantes exigentes.</p>
+                        <p class="destacado-precio">Oferta: <span>$12.990</span></p>
+                    </div>
+                </div>
+
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/tijera de podar profesional.webp" alt="Tijera de Podar" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Tijera de Podar Profesional</h4>
+                        <p class="destacado-desc">Hojas de acero al carbono con bloqueo de seguridad. Cortes limpios que cuidan la salud de tus plantas ornamentales.</p>
+                        <p class="destacado-precio">Oferta: <span>$8.500</span></p>
+                    </div>
+                </div>
+
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/rastrillo de mano ergonomico.avif" alt="Rastrillo de mano" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Rastrillo de Mano Ergonómico</h4>
+                        <p class="destacado-desc">Diseñado con 5 garras de acero reforzado para airear, limpiar y remover la tierra en maceteros o huertos pequeños de forma eficiente.</p>
+                        <p class="destacado-precio">Oferta: <span>$5.490</span></p>
+                    </div>
+                </div>
+
             </div>
-            <div class="categoria-card">
-                <h3>Huerto Urbano</h3>
-                <p>Semillas orgánicas y hortalizas listas para plantar y cosechar.</p>
+            <div class="ver-mas-container">
+                <a href="galeria.html?cat=herramientas" class="btn-ver-mas">Ver más +</a>
+                <a href="#comprar" class="btn-comprar">Comprar 🛒</a>
             </div>
-            <div class="categoria-card">
-                <h3>Herramientas y Fertilizantes</h3>
-                <p>Sustratos, humus de lombriz y herramientas de alta durabilidad.</p>
+        </section>
+
+        <section class="destacados-section">
+            <h3 class="seccion-titulo">🧪 Modelos de Abono Sustentable</h3>
+            <div class="destacados-container">
+                
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/hunus de lombriz premium.jpg" alt="Humus de Lombriz" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Humus de Lombriz Premium</h4>
+                        <p class="destacado-desc">Abono orgánico puro extraído por lixiviación natural. Aporta microorganismos benéficos y acelera radicalmente el crecimiento.</p>
+                        <p class="destacado-precio">Precio: <span>$4.500</span></p>
+                    </div>
+                </div>
+
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/compost organico madurado.jpg" alt="Compost Orgánico" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Compost Orgánico Madurado</h4>
+                        <p class="destacado-desc">Mezcla premium rica en nitrógeno y materia vegetal descompuesta. Mejora la retención de humedad y la estructura del suelo.</p>
+                        <p class="destacado-precio">Precio: <span>$3.990</span></p>
+                    </div>
+                </div>
+
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/abono de guano de ave marino.jpg" alt="Guano de Ave" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Abono de Guano de Ave Marino</h4>
+                        <p class="destacado-desc">Potente fertilizante natural alto en fósforo. Especialmente recomendado para potenciar fases de floración y frutos grandes.</p>
+                        <p class="destacado-precio">Precio: <span>$6.200</span></p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ver-mas-container">
+                <a href="galeria.html?cat=fertilizacion" class="btn-ver-mas">Ver más +</a>
+                <a href="#comprar" class="btn-comprar">Comprar 🛒</a>
+            </div>
+        </section>
+
+        <section class="destacados-section">
+            <h3 class="seccion-titulo">🌿 Tipos de Plantas y Cultivos</h3>
+            
+            <div class="destacados-container" style="margin-bottom: 20px;">
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/menta.webp" alt="Menta" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Planta de Menta Arvenis</h4>
+                        <p class="destacado-desc">Planta aromática perenne de rápido crecimiento. Ideal para huertos caseros, infusiones y control biológico de insectos.</p>
+                        <p class="destacado-precio">Precio: <span>$2.500</span></p>
+                    </div>
+                </div>
+
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/romero.jpg" alt="Romero" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Romero Rastrero Macollo</h4>
+                        <p class="destacado-desc">Arbusto rústico ultra resistente que requiere muy poco riego. Excelente condimento culinario y ambientador natural.</p>
+                        <p class="destacado-precio">Precio: <span>$3.200</span></p>
+                    </div>
+                </div>
+
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/tomatecherry.webp" alt="Tomate Cherry" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Plantón de Tomate Cherry</h4>
+                        <p class="destacado-desc">Variedad productiva perfecta para balconies. Produce frutos dulces en racimo durante toda la temporada estival.</p>
+                        <p class="destacado-precio">Precio: <span>$1.800</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados-container">
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/aji.jpeg" alt="Ají" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Planta de Ají Cacho de Cabra</h4>
+                        <p class="destacado-desc">Variedad endémica chilena de picor intenso. Planta compacta y muy decorativa que requiere exposición directa al sol.</p>
+                        <p class="destacado-precio">Precio: <span>$2.200</span></p>
+                    </div>
+                </div>
+
+                <div class="destacado-card">
+                    <div class="img-destacado-icono">
+                        <img src="imagenes/lechuga.jpg" alt="Lechuga" class="prod-img">
+                    </div>
+                    <div class="destacado-info">
+                        <h4>Almácigo de Lechuga Costina</h4>
+                        <p class="destacado-desc">Brotes listos para trasplantar. Crecimiento rápido en suelos húmedos, ideal para iniciar en la agricultura urbana.</p>
+                        <p class="destacado-precio">Precio: <span>$1.200</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ver-mas-container">
+                <a href="galeria.html?cat=plantas" class="btn-ver-mas">Ver más +</a>
+                <a href="#comprar" class="btn-comprar">Comprar 🛒</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>Autor: <b>Máximo Décimo Meridio, comandante del ejército del norte</b> | © 2026 Biorganico</p>
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-box">
+                <h4>Soporte & Contacto</h4>
+                <p>📧 contacto@biorganico.cl</p>
+                <p>📍 Rancagua, Chile</p>
+            </div>
+            <div class="footer-box">
+                <h4>¿Quiénes Somos?</h4>
+                <p class="nosotros-footer-text">En Biorganico nos dedicamos a fomentar la sustentabilidad urbana, proveyendo insumos y herramientas de primera categoría para que cualquiera pueda levantar su propio pulmón verde en casa.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Autor: <b>Máximo Décimo Meridio, comandante del ejército del norte</b> | © 2026 Biorganico</p>
+        </div>
     </footer>
 
 </body>

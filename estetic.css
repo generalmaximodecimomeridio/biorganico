@@ -1,147 +1,300 @@
-
+/* --- CONFIGURACIÓN GENERAL --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f7f4;
-    color: #333;
+    background-image: linear-gradient(rgba(18, 38, 20, 0.4), rgba(18, 38, 20, 0.5)), url('imagenes/logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
+/* --- HEADER Y CONTROLES --- */
 header {
-    background-color: #2e7d32; 
+    background-color: rgba(46, 125, 50, 0.9);
+    backdrop-filter: blur(10px);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 10px 5%;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+    gap: 15px;
 }
 
-header .logo h1 {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-}
-
-header nav a {
-    color: #e8f5e9;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background 0.3s;
-}
-
-header nav a:hover, header nav a.active {
-    background-color: #1b5e20;
+header .logo a { text-decoration: none; }
+header .logo .logo-texto {
     color: white;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    display: block;
+    transition: transform 0.2s ease-in-out;
 }
+header .logo a:hover .logo-texto { transform: scale(1.05); }
 
-
-.search-container {
-    flex: 0 1 300px; 
-    margin: 0 20px;
-}
-
+.search-container { flex: 1 1 300px; max-width: 450px; }
 .search-container form {
     display: flex;
     background-color: white;
-    border-radius: 20px; 
+    border-radius: 20px;
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
-
 .search-input {
     width: 100%;
     border: none;
-    padding: 10px 16px; 
+    padding: 10px 16px;
     font-size: 0.9rem;
     background: transparent;
-    outline: none; 
+    outline: none;
+    color: #333;
 }
 
-
-main {
-    flex: 1;
-    padding: 40px 5%;
+.header-right-controls { display: flex; align-items: center; gap: 15px; }
+.nav-top-link {
+    color: #e8f5e9;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
 }
+.nav-top-link:hover { background-color: rgba(255, 255, 255, 0.15); color: white; }
+.login-top-btn { border: 1px solid rgba(255, 255, 255, 0.4); }
+.hamburger-btn { font-size: 1.8rem; cursor: pointer; padding: 5px; transition: transform 0.2s; user-select: none; }
+.hamburger-btn:hover { transform: scale(1.1); }
 
-.hero {
-    text-align: center;
-    background-color: white;
-    padding: 40px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
-}
+/* Por defecto, los enlaces móviles están ocultos en pantallas de PC */
+.mobile-only-links { display: none; }
 
-.hero h2 {
-    color: #2e7d32;
-    margin-bottom: 10px;
-}
-
-.categorias-home {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.categoria-card {
-    background-color: white;
-    flex: 1;
-    padding: 25px;
-    border-radius: 8px;
-    border-top: 5px solid #4caf50;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    text-align: center;
-}
-
-.categoria-card h3 {
-    color: #1b5e20;
-    margin-bottom: 10px;
-}
-
-
-footer {
-    background-color: #1b5e20;
+/* --- MENÚ LATERAL --- */
+.menu-checkbox { display: none; }
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(27, 94, 32, 0.95);
+    backdrop-filter: blur(15px);
     color: white;
+    padding: 30px;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.3);
+    transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.menu-checkbox:checked ~ .sidebar-menu { right: 0; }
+.close-btn { align-self: flex-end; font-size: 1.5rem; cursor: pointer; margin-bottom: 20px; }
+.sidebar-menu h3 { font-size: 1.4rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; margin-bottom: 20px; color: #a5d6a7; }
+.sidebar-menu ul { list-style: none; }
+.sidebar-menu ul li { margin-bottom: 15px; }
+.sidebar-menu ul li a {
+    color: #e8f5e9;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.sidebar-menu ul li a:hover { background-color: #2e7d32; }
+
+/* Botón especial para el login en el menú lateral */
+.sidebar-login-btn { border: 1px solid rgba(255, 255, 255, 0.3); background-color: rgba(255,255,255,0.05); }
+
+.sidebar-footer { margin-top: auto; padding-top: 30px; text-align: center; }
+.btn-ayuda {
+    display: block;
+    background-color: #ffb74d;
+    color: #333 !important;
     text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
-    margin-top: auto;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
+/* --- SECCIONES Y TARJETAS (Glassmorphism) --- */
+main { flex: 1; padding: 40px 5%; }
+.hero, .destacados-section {
+    background-color: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    padding: 30px;
+}
+.hero { text-align: center; padding: 40px 20px; }
+.hero h2, .seccion-titulo { color: #a5d6a7; text-shadow: 0 2px 4px rgba(0,0,0,0.3); margin-bottom: 10px; }
+.hero p { font-weight: 500; }
 
+.seccion-titulo {
+    font-size: 1.5rem;
+    border-bottom: 2px solid rgba(165, 214, 167, 0.4);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Grilla fluida auto-ajustable */
+.destacados-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.destacado-card {
+    flex: 1 1 280px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 8px;
+    padding: 15px;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Contenedor estricto de imágenes */
+.img-destacado-icono {
+    flex: 0 0 75px;
+    height: 75px;
+    background: #e8f5e9;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 3px;
+}
+.img-destacado-icono .prod-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.destacado-info h4 { color: #1b5e20; margin-bottom: 5px; }
+.destacado-desc { font-size: 0.85rem; color: #555; margin-bottom: 8px; line-height: 1.3; }
+.destacado-precio { font-weight: bold; font-size: 0.95rem; }
+.destacado-precio span { color: #d32f2f; font-size: 1.1rem; }
+
+/* --- BOTONES DE ACCIÓN (VER MÁS Y COMPRAR) --- */
+.ver-mas-container { 
+    display: flex;
+    justify-content: flex-end; 
+    gap: 12px; 
+    margin-top: 20px; 
+}
+
+.btn-ver-mas, .btn-comprar {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-ver-mas {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #a5d6a7;
+    border: 1px solid rgba(165, 214, 167, 0.4);
+}
+.btn-ver-mas:hover {
+    background-color: #2e7d32;
+    color: white;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-comprar {
+    background-color: #ffb74d; 
+    color: #122614; 
+    border: 1px solid #ffb74d;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.btn-comprar:hover {
+    background-color: #ffa726;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 183, 77, 0.4);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: rgba(27, 94, 32, 0.95);
+    backdrop-filter: blur(10px);
+    color: white;
+    margin-top: auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer-content { display: flex; justify-content: space-between; padding: 0 5% 20px 5%; border-bottom: 1px solid rgba(255,255,255,0.1); gap: 30px; }
+.footer-box { flex: 1; }
+.footer-box h4 { margin-bottom: 12px; color: #a5d6a7; font-size: 1.1rem; }
+.footer-box p, .nosotros-footer-text { font-size: 0.9rem; color: #e8f5e9; line-height: 1.5; }
+.footer-bottom { text-align: center; padding: 15px; font-size: 0.85rem; background-color: #123e14; }
+
+/* --- RESPONSIVIDAD SÓLIDA (Ajustes Automáticos) --- */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+    /* Oculta los enlaces de la cabecera en PC */
+    .desktop-only { display: none; }
+    
+    /* Muestra los enlaces dentro del menú desplegable */
+    .mobile-only-links { display: block; }
+
+    /* Ajuste de cabecera flexible en vertical */
+    header { 
+        flex-wrap: wrap; 
+        padding: 12px 4%;
+    }
+    
+    /* El logo y el botón de hamburguesa se quedan arriba alineados */
+    header .logo { order: 1; }
+    .header-right-controls { order: 2; }
+    
+    /* La barra de búsqueda baja al centro automáticamente y ocupa todo el ancho */
+    .search-container { 
+        order: 3; 
+        width: 100%; 
+        flex: 0 0 100%; 
+        max-width: 100%; 
+        margin: 5px 0 0 0;
     }
 
-    .search-container {
-        width: 90%;
-        margin: 5px 0;
+    .destacados-container, .footer-content { flex-direction: column; gap: 20px; }
+    
+    /* La tarjeta mantiene la foto a la izquierda de forma limpia */
+    .destacado-card { 
+        flex-direction: row; 
+        text-align: left; 
     }
-
-    header nav {
-        display: flex;
-        flex-direction: column;
+    
+    /* Centra los botones de Ver más y Comprar en móviles */
+    .ver-mas-container {
+        justify-content: center;
         width: 100%;
-    }
-
-    header nav a {
-        margin: 5px 0;
-        width: 100%;
-    }
-
-    .categorias-home {
-        flex-direction: column;
     }
 }
