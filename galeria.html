@@ -1,11 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Biorganico | Catálogo Completo</title>
+    <link rel="stylesheet" href="estetic.css">
 </head>
 <body>
-    <h1>A un en desarrollo</h1>
+
+    <!-- MENÚ LATERAL DESPLEGABLE -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    <div class="sidebar-menu">
+        <label for="menu-toggle" class="close-btn">✕</label>
+        
+        <div class="mobile-only-links">
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="login.html">🔑 Ingresar</a></li>
+            </ul>
+        </div>
+
+        <h3>Categorías</h3>
+        <ul>
+            <li><a href="galeria.html?cat=plantas">🌿 Plantas</a></li>
+            <li><a href="galeria.html?cat=agricultura">🚜 Agricultura</a></li>
+            <li><a href="galeria.html?cat=herramientas">🛠️ Herramientas</a></li>
+            <li><a href="galeria.html?cat=fertilizacion">🧪 Fertilización</a></li>
+            <li><a href="galeria.html?cat=fumigacion">💨 Fumigación</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="#contacto" class="btn-ayuda" onclick="document.getElementById('menu-toggle').checked = false;">¿Necesitas ayuda?</a>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <strong class="logo-texto">Biorganico</strong>
+            </a>
+        </div>
+
+        <div class="search-container">
+            <form onsubmit="return false;">
+                <input type="text" placeholder="Buscar en la galería..." class="search-input">
+            </form>
+        </div>
+
+        <div class="header-right-controls">
+            <a href="index.html" class="nav-top-link desktop-only">🏠 Inicio</a>
+            <a href="login.html" class="nav-top-link desktop-only">🔑 Ingresar</a>
+            <label for="menu-toggle" class="hamburger-btn">☰</label>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL: GALERÍA COMPLETA -->
+    <main>
+        <section class="hero-galeria">
+            <h2>Catálogo de Especialidades</h2>
+            <p>El inventario definitivo para el agricultor urbano. Todo lo que necesitas con trazabilidad ecológica certificada.</p>
+        </section>
+
+        <section class="galeria-section">
+            <div class="galeria-grid-container">
+                
+                <!-- 1. Albahaca (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Planta de Albahaca Italiana.jpg" alt="Albahaca Italiana" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-plantas">🌿 Planta</span>
+                        <h4>Planta de Albahaca Italiana</h4>
+                        <p class="galeria-desc">Hojas anchas y muy aromáticas. Excelente repelente natural de plagas e ideal para uso culinario inmediato.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>14 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$2.890</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 2. Paleta (OFERTA) -->
+                <div class="galeria-card tarjeta-oferta">
+                    <span class="badge-descuento">-15% DTO.</span>
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Paleta de Trasplante Graduada.jpg" alt="Paleta Graduada" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-herramientas">🛠️ Herramienta</span>
+                        <h4>Paleta de Trasplante Graduada</h4>
+                        <p class="galeria-desc">Con marcas de profundidad grabadas en el metal. Perfecta para trasplantar almácigos midiendo la raíz exacta.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>9 unids.</b></p>
+                        <p class="galeria-precio">
+                            <span class="precio-antiguo">$7.500</span> 
+                            <span>$6.375</span>
+                        </p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 3. Bocashi (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Bocashi Orgánico Fermentado.png" alt="Bocashi" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-fertilizacion">🧪 Fertilización</span>
+                        <h4>Bocashi Orgánico Fermentado</h4>
+                        <p class="galeria-desc">Nutrición rápida y eficiente a base de microorganismos benéficos activados para regenerar la vida del suelo.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>7 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$5.990</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 4. Motocultivador (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Motocultivador a Gasolina Compacto.jpg" alt="Motocultivador" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-agricultura">🚜 Agricultura</span>
+                        <h4>Motocultivador a Gasolina Compacto</h4>
+                        <p class="galeria-desc">Maquinaria ligera de gran potencia para descompactar tierra y preparar camas de cultivo de forma rápida.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>3 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$249.900</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 5. Fumigadora Mochila (OFERTA) -->
+                <div class="galeria-card tarjeta-oferta">
+                    <span class="badge-descuento">-20% DTO.</span>
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Fumigadora de Mochila Manual 16L.webp" alt="Fumigadora 16L" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-fumigacion">💨 Fumigación</span>
+                        <h4>Fumigadora de Mochila Manual 16L</h4>
+                        <p class="galeria-desc">Capacidad industrial con correas acolchadas. Ideal para pulverizar purines u hongos biológicos en grandes áreas.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>11 unids.</b></p>
+                        <p class="galeria-precio">
+                            <span class="precio-antiguo">$24.990</span> 
+                            <span>$19.990</span>
+                        </p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 6. Fibra de Coco (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Sustrato de Fibra de Coco.webp" alt="Fibra de Coco" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-fertilizacion">🧪 Fertilización</span>
+                        <h4>Sustrato de Fibra de Coco</h4>
+                        <p class="galeria-desc">Bloque prensado con excelente capacidad de retención de agua y oxigenación para sistemas hidropónicos y mezclas.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>18 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$4.200</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 7. Espinaca (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Almácigo de Espinaca Matador.jpg" alt="Espinaca Matador" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-plantas">🌿 Planta</span>
+                        <h4>Almácigo de Espinaca Matador</h4>
+                        <p class="galeria-desc">Hojas carnosas de color verde oscuro muy resistente al frío invernal. Lista para trasplante definitivo.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>15 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$1.500</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 8. Lavanda (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Arbusto de Lavanda Angustifolia.jpg" alt="Lavanda" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-plantas">🌿 Planta</span>
+                        <h4>Arbusto de Lavanda Angustifolia</h4>
+                        <p class="galeria-desc">Gran capacidad polinizadora y aroma relajante. Planta rústica perenne que demanda muy poca agua al crecer.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>12 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$3.990</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 9. Areador Césped (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Areador de Césped de Rodillo.jpg" alt="Areador Rodillo" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-agricultura">🚜 Agricultura</span>
+                        <h4>Areador de Césped de Rodillo</h4>
+                        <p class="galeria-desc">Púas de acero que perforan el prado de forma uniforme, permitiendo el ingreso de oxígeno y nutrientes a la raíz.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>5 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$34.500</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 10. Bordeadora Manual (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Bordeadora de Césped Manual.webp" alt="Bordeadora" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-herramientas">🛠️ Herramienta</span>
+                        <h4>Bordeadora de Césped Manual</h4>
+                        <p class="galeria-desc">Cuchilla de alta precisión semicircular para delimitar perfectamente las orillas de senderos y maceteros.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>8 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$9.200</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 11. Carretilla (OFERTA) -->
+                <div class="galeria-card tarjeta-oferta">
+                    <span class="badge-descuento">-10% DTO.</span>
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Carretilla Reforzada de Carga Pesada.webp" alt="Carretilla" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-agricultura">🚜 Agricultura</span>
+                        <h4>Carretilla Reforzada Carga Pesada</h4>
+                        <p class="galeria-desc">Tolva metálica de gran capacidad con rueda neumática robusta para mover sustratos y abonos sin esfuerzo.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>4 unids.</b></p>
+                        <p class="galeria-precio">
+                            <span class="precio-antiguo">$49.990</span> 
+                            <span>$44.991</span>
+                        </p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 12. Cortadora Césped (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Cortadora de Césped Inalámbrica.webp" alt="Cortadora" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-agricultura">🚜 Agricultura</span>
+                        <h4>Cortadora de Césped Inalámbrica</h4>
+                        <p class="galeria-desc">Motor eléctrico silencioso libre de emisiones de combustible. Regulación de altura mediante palanca central.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>3 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$129.900</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 13. Cosechadora Frutas (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Cosechadora Manual de Frutas.webp" alt="Cosechadora" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-herramientas">🛠️ Herramienta</span>
+                        <h4>Cosechadora Manual de Frutas</h4>
+                        <p class="galeria-desc">Canastillo recolector con garras acolchadas que evita daños en cítricos, manzanas o duraznos en altura.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>13 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$7.900</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 14. Cultivador Garras (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Cultivador de 3 Garras manual.jpg" alt="Cultivador manual" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-herramientas">🛠️ Herramienta</span>
+                        <h4>Cultivador de 3 Garras Manual</h4>
+                        <p class="galeria-desc">Garras de acero carbono ideales para romper la costra superficial de la tierra revuelta y airear macetas.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>19 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$4.500</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 15. Desbrozadora Eléctrica (OFERTA) -->
+                <div class="galeria-card tarjeta-oferta">
+                    <span class="badge-descuento">-25% DTO.</span>
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Desbrozadora Eléctrica Profesional.webp" alt="Desbrozadora" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-agricultura">🚜 Agricultura</span>
+                        <h4>Desbrozadora Eléctrica Profesional</h4>
+                        <p class="galeria-desc">Corte limpio mediante nylon reforzado. Su mango ergonómico permite limpiar malezas rebeldes con comodidad.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>6 unids.</b></p>
+                        <p class="galeria-precio">
+                            <span class="precio-antiguo">$79.990</span> 
+                            <span>$59.990</span>
+                        </p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 16. Ácidos Húmicos (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Extracto de Ácidos Húmicos Líquido.jpg" alt="Ácidos Húmicos" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-fertilizacion">🧪 Fertilización</span>
+                        <h4>Extracto de Ácidos Húmicos Líquido</h4>
+                        <p class="galeria-desc">Mejora drásticamente la absorción de nutrientes radiculares, optimizando la retención catiónica en el suelo.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>10 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$8.900</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 17. Extractor Malezas (Normal) -->
+                <div class="galeria-card">
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Extractor de Malezas de Raíz.jpg" alt="Extractor Malezas" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-herramientas">🛠️ Herramienta</span>
+                        <h4>Extractor de Malezas de Raíz</h4>
+                        <p class="galeria-desc">Diseño de palanca para sacar maleza profunda desde el núcleo sin necesidad de emplear químicos tóxicos.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>16 unids.</b></p>
+                        <p class="galeria-precio">Precio: <span>$6.200</span></p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+                <!-- 18. Fumigadora Espalda Motor (OFERTA) -->
+                <div class="galeria-card tarjeta-oferta">
+                    <span class="badge-descuento">-12% DTO.</span>
+                    <div class="img-galeria-wrapper">
+                        <img src="imagenes2/Fumigadora a Motor de Espalda.jpg" alt="Fumigadora Motor" class="galeria-img">
+                    </div>
+                    <div class="galeria-info">
+                        <span class="categoria-tag tag-fumigacion">💨 Fumigación</span>
+                        <h4>Fumigadora a Motor de Espalda</h4>
+                        <p class="galeria-desc">Para grandes superficies agrícolas. Motor de 2 tiempos de largo alcance para nebulización homogénea de parcelas.</p>
+                        <p class="galeria-stock">🟢 Disponibles: <b>2 unids.</b></p>
+                        <p class="galeria-precio">
+                            <span class="precio-antiguo">$159.000</span> 
+                            <span>$139.920</span>
+                        </p>
+                        <a href="#comprar" class="btn-comprar-card">Comprar 🛒</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-box">
+                <h4>Soporte & Contacto</h4>
+                <p>📧 contacto@biorganico.cl</p>
+                <p>📍 Rancagua, Chile</p>
+            </div>
+            <div class="footer-box">
+                <h4>¿Quiénes Somos?</h4>
+                <p class="nosotros-footer-text">En Biorganico nos dedicamos a fomentar la sustentabilidad urbana, proveyendo insumos y herramientas de primera categoría para que cualquiera pueda levantar su propio pulmón verde en casa.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Autor: <b>Máximo Décimo Meridio, comandante del ejército del norte</b> | © 2026 Biorganico</p>
+        </div>
+    </footer>
+
 </body>
 </html>

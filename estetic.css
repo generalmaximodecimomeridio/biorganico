@@ -494,3 +494,167 @@ footer {
         padding: 25px 20px;
     }
 }
+/* ==========================================================================
+   NUEVOS ESTILOS EXCLUSIVOS PARA GALERIA.HTML
+   ========================================================================== */
+
+/* Encabezado secundario de la galería */
+.hero-galeria {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+
+.hero-galeria h2 {
+    font-size: 2.2rem;
+    color: #a5d6a7;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-galeria p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sección contenedora de la galería */
+.galeria-section {
+    padding: 20px 5% 60px 5%;
+}
+
+/* Grilla principal: Se adapta sola de 1 a 3 columnas según el monitor */
+.galeria-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Tarjetas individuales de la Galería */
+.galeria-card {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Efecto levitación al pasar el mouse por encima */
+.galeria-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(165, 214, 167, 0.4);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+/* Contenedor de la Imagen */
+.img-galeria-wrapper {
+    width: 100%;
+    height: 220px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.galeria-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+    transition: transform 0.5s ease;
+}
+
+.galeria-card:hover .galeria-img {
+    transform: scale(1.06); /* Micro-zoom estético al pasar el mouse */
+}
+
+/* Información del producto */
+.galeria-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja los botones hacia abajo para que queden alineados */
+}
+
+/* Etiquetas de Categorías (Tags) */
+.categoria-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Colores personalizados por categoría */
+.tag-plantas { background-color: rgba(76, 175, 80, 0.2); color: #81c784; border: 1px solid rgba(76, 175, 80, 0.4); }
+.tag-herramientas { background-color: rgba(255, 152, 0, 0.2); color: #ffb74d; border: 1px solid rgba(255, 152, 0, 0.4); }
+.tag-fertilizacion { background-color: rgba(33, 150, 243, 0.2); color: #64b5f6; border: 1px solid rgba(33, 150, 243, 0.4); }
+.tag-agricultura { background-color: rgba(156, 39, 176, 0.2); color: #ba68c8; border: 1px solid rgba(156, 39, 176, 0.4); }
+.tag-fumigacion { background-color: rgba(0, 150, 136, 0.2); color: #4db6ac; border: 1px solid rgba(0, 150, 136, 0.4); }
+
+.galeria-info h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.galeria-desc {
+    font-size: 0.88rem;
+    color: #b0bec5;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Mantiene la descripción estirada para simetría */
+}
+
+.galeria-stock {
+    font-size: 0.8rem;
+    color: #81c784;
+    margin-bottom: 8px;
+}
+
+.galeria-precio {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 10px;
+}
+
+.galeria-precio span {
+    font-size: 1.25rem;
+    color: #ffd54f; /* Color dorado para resaltar el valor */
+    font-weight: bold;
+}
+
+/* El botón reutiliza el estilo '.btn-comprar-card' que ya pusimos en index, 
+   pero se le da un ancho completo para que destaque más en la galería */
+.galeria-card .btn-comprar-card {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+/* Ajustes finos para pantallas móviles */
+@media (max-width: 480px) {
+    .galeria-grid-container {
+        grid-template-columns: 1fr; /* Columna única obligatoria en celulares */
+        gap: 20px;
+    }
+    
+    .hero-galeria h2 {
+        font-size: 1.8rem;
+    }
+}
